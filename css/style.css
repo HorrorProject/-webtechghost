@@ -1,0 +1,134 @@
+.parallax {
+    background-image: url('../images/big-banner.jpg');
+    height: 200px; /* <<< ย่อความสูงลงเหลือ 400px */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card .card-img-top {
+    width: 100%;
+    height: auto; /* ปรับความสูงตามอัตราส่วน */
+    object-fit: cover; /* ครอบคลุมพื้นที่ อาจมีการครอป */
+  }
+
+  
+  header {
+    position: relative; /* ทำให้เป็น container สำหรับ overlay */
+    text-align: center;
+    padding: 5rem 0; /* ปรับ padding ให้เหมาะสม */
+    background-image: url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white; /* กำหนดสีข้อความหลักเป็นขาว */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* สีดำโปร่งใส 50% */
+}
+
+header .container {
+    position: relative; /* ทำให้ข้อความอยู่เหนือ overlay */
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5rem; /* ปรับขนาดตัวอักษรให้เหมาะสม */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, red, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* ให้มีขนาดเท่าเนื้อหา */
+    padding: 0.5rem 1rem; /* เพิ่ม padding รอบข้อความ gradient */
+    border-radius: 5px; /* ขอบมนเล็กน้อย */
+    background-color: rgba(0, 0, 0, 0.3); /* เพิ่มพื้นหลังทึบเล็กน้อยให้อ่านง่ายขึ้น */
+}
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* เพิ่ม transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเริ่มต้น */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* เลื่อนขึ้นเล็กน้อย */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* เพิ่มเงาเมื่อ hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px; /* ปรับขนาดความสูงตามต้องการ */
+    object-fit: cover;
+    border-radius: 5px 5px 0 0; /* ทำให้มุมบนของรูปมน */
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-text small {
+    color: #aaa;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.col-md-8 {
+    display: flex; /* เปลี่ยนให้เป็น Flex Container */
+    flex-wrap: wrap; /* อนุญาตให้ item ขึ้นบรรทัดใหม่เมื่อไม่พอ */
+    gap: 20px; /* ระยะห่างระหว่าง item (ปรับได้ตามต้องการ) */
+}
+
+.col-md-8 .card {
+    width: calc(50% - 10px); /* กำหนดความกว้างให้ Card ประมาณ 50% ลบระยะห่าง */
+}
+
+/* สำหรับหน้าจอขนาดเล็กกว่า md (Bootstrap breakpoint) ให้กลับมาเรียงลง */
+@media (max-width: 767.98px) {
+    .col-md-8 {
+        flex-direction: column; /* เรียงตามแนวตั้ง */
+    }
+
+    .col-md-8 .card {
+        width: 100%; /* กว้างเต็มที่ */
+    }
+}
+
+.game-link {
+    display: flex; /* จัดเรียงรูปภาพและข้อความในแนวนอน */
+    align-items: center; /* จัดให้กึ่งกลางตามแนวตั้ง */
+    text-decoration: none; /* ลบเส้นใต้จากลิงก์ */
+    color: white; /* กำหนดสีข้อความ */
+}
+
+.game-link:hover {
+    color: #eee; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.game-icon {
+    width: 100px; /* กำหนดขนาดความกว้างของไอคอน (ปรับตามต้องการ) */
+    height: 100px; /* กำหนดขนาดความสูงของไอคอน (ปรับตามต้องการ) */
+    margin-right: 20px; /* เพิ่มระยะห่างระหว่างไอคอนกับชื่อเกม */
+    vertical-align: middle; /* จัดให้กึ่งกลางแนวตั้งกับข้อความ */
+    border-radius: 10px; /* ทำให้มุมมนเล็กน้อย (ถ้าต้องการ) */
+}
