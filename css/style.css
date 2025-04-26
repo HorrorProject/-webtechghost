@@ -132,3 +132,7 @@ header h1 {
     vertical-align: middle; /* จัดให้กึ่งกลางแนวตั้งกับข้อความ */
     border-radius: 10px; /* ทำให้มุมมนเล็กน้อย (ถ้าต้องการ) */
 }
+body {
+    cursor: url('images/ghost.cur'), auto;
+  }
+  
